@@ -18,6 +18,8 @@ const doesExist = (username)=>{
 public_users.post("/register", (req,res) => {
     const username = req.body.username;
     const password = req.body.password;
+    console.log(req)
+    console.log(password)
     if (username && password) {
         if (!doesExist(username)) {
         users.push({"username":username,"password":password});
@@ -71,4 +73,3 @@ public_users.get('/review/:isbn',function (req, res) {
 });
 
 module.exports.general = public_users;
-
